@@ -1,0 +1,92 @@
+{
+  "_version": "1.7.0",
+  "start_url": "index.html",
+  "sap.app": {
+    "id": "demo",
+    "type": "application",
+    "title": "Demo",
+    "description": "Sample Code",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": [
+      "sap_belize_hcw",
+      "sap_belize_hcb",
+      "sap_belize_plus",
+      "sap_belize"
+    ]
+  },
+  "sap.ui5": {
+    "config": {
+      "sapFiori2Adaptation": true
+    },
+    "dependencies": {
+      "minUI5Version": "1.46.7",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.f": {}
+      }
+    },
+    "resources": {
+      "js": [
+        
+      ],
+      "css": [
+        
+      ]
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {},
+    "rootView": {
+      "viewName": "demo.view.App",
+      "id": "rootView",
+      "type": "XML"
+    },
+    "routing": {
+      "routes": [{
+        "name": "home",
+        "pattern": "",
+        "target": "home",
+        "titleTarget": "home"
+      }],
+      "targets": {
+        "home": {
+          "viewId": "homeView",
+          "viewName": "Home",
+          "transition": "fade",
+          "viewLevel": 1
+        },
+        "notFound": {
+          "viewName": "Home",
+          "transition": "slide",
+          "viewLevel": 98
+        }
+      },
+      "config": {
+        "async": true,
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "demo.view",
+        "controlId": "rootApp",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "bypassed": {
+          "target": "notFound"
+        },
+        "homeRoute": "home"
+      }
+    }
+  }
+}
